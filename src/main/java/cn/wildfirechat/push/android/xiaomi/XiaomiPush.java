@@ -1,6 +1,5 @@
 package cn.wildfirechat.push.android.xiaomi;
 
-
 import cn.wildfirechat.push.PushMessage;
 import cn.wildfirechat.push.PushMessageType;
 import com.google.gson.Gson;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.json.simple.parser.ParseException;
 
-
 import java.io.IOException;
 
 import static com.xiaomi.xmpush.server.Message.NOTIFY_TYPE_ALL;
@@ -24,7 +22,6 @@ public class XiaomiPush {
     private static final Logger LOG = LoggerFactory.getLogger(XiaomiPush.class);
     @Autowired
     private XiaomiConfig mConfig;
-
 
     public void push(PushMessage pushMessage) {
         Constants.useOfficial();
@@ -52,6 +49,7 @@ public class XiaomiPush {
                     .notifyType(NOTIFY_TYPE_ALL)
                     .restrictedPackageName(pushMessage.getPackageName())
                     .passThrough(0)
+                    .
                     .timeToLive(timeToLive)
                     .enableFlowControl(true)
                     .build();
